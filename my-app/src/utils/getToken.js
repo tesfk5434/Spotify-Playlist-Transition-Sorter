@@ -2,8 +2,9 @@ const getToken = async code => {
 
     // stored in the previous step
     const codeVerifier = localStorage.getItem('code_verifier');
-  
+    const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
     const url = "https://accounts.spotify.com/api/token";
+    const redirectUri = 'http://127.0.0.1:5173/callback';
     const payload = {
       method: 'POST',
       headers: {

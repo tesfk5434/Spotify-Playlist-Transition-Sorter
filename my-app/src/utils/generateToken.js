@@ -8,7 +8,7 @@ async function generateToken(){
     const scope = 'user-read-private user-read-email';
     window.localStorage.setItem('code_verifier', codeVerifier);
     const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
-    const redirectUri = 'http://127.0.0.1:5173';
+    const redirectUri = 'http://127.0.0.1:5173/callback';
     const authUrl = new URL("https://accounts.spotify.com/authorize");
     const params = {
         response_type: 'code',
